@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
     {
         float forwardInput = Input.GetAxis("Vertical");
         playerRb.AddForce(focalPoint.transform.forward * _speed * forwardInput);
-
         _powerupIndicator.transform.position = transform.position+ new Vector3(0,-0.5f,0);
 
     }

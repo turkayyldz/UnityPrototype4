@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     [SerializeField] GameObject _enemyPrefab;
+    [SerializeField] GameObject _powerupPrefab;
     [SerializeField] int _enemyCount;
     [SerializeField] int _waveNumber=1;
     float _spawnRange = 9.0f;
@@ -21,6 +22,7 @@ public class SpawnManager : MonoBehaviour
         {
             _waveNumber++;
             SpawnEnemyWave(_waveNumber);
+            Instantiate(_powerupPrefab, GenerateSpawnPosition(), _powerupPrefab.transform.rotation);
         }
     }
 
